@@ -35,10 +35,10 @@ class AdminController extends AbstractController
         return $this->redirectToRoute('admin_dashboard');
     }
 
-    #[Route('/logout', name: 'logout')]
-    public function logout(SessionInterface $session): Response
+    #[Route('/deconnexion', name: 'deconnexion')]
+    public function deconnexion(SessionInterface $session): Response
     {
         $session->remove('is_authenticated');
-        return $this->redirectToRoute('app_home');
+        return $this->redirectToRoute('admin_dashboard');
     }
 } 

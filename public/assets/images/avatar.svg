@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <circle cx="16" cy="16" r="16" fill="#E5E7EB"/>
+    
+    <!-- Avatar Silhouette -->
+    <path d="M16 8C17.6569 8 19 9.34315 19 11C19 12.6569 17.6569 14 16 14C14.3431 14 13 12.6569 13 11C13 9.34315 14.3431 8 16 8Z" fill="#94A3B8"/>
+    <path d="M24 24C24 19.5817 20.4183 16 16 16C11.5817 16 8 19.5817 8 24" stroke="#94A3B8" stroke-width="2" stroke-linecap="round"/>
+</svg> 

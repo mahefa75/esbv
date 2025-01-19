@@ -5,23 +5,39 @@
 {% block stylesheets %}
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('assets/css/admin.css') }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 {% endblock %}
 
 {% block body %}
-<div class="container">
-    <div class="login-container">
-        <h2 class="login-title">Connexion Administration</h2>
-        <form action="{{ path('admin_login') }}" method="post">
-            <div class="form-group">
-                <label for="username">Nom d'utilisateur</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Mot de passe</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit" class="btn-submit">Se connecter</button>
-        </form>
+<div class="admin-login-page">
+    <div class="admin-login-container">
+        <div class="admin-logo">
+            <img src="{{ asset('assets/images/logo.svg') }}" alt="Med. Pharma Analytics Hub">
+        </div>
+        
+        <div class="login-form-container">
+            <h2>Connexion Administration</h2>
+            <form action="{{ path('admin_login') }}" method="post">
+                <div class="form-group">
+                    <label for="username">Nom d'utilisateur</label>
+                    <div class="input-with-icon">
+                        <i class="material-icons">person</i>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <div class="input-with-icon">
+                        <i class="material-icons">lock</i>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <i class="material-icons">login</i>
+                    Se connecter
+                </button>
+            </form>
+        </div>
     </div>
 </div>
 {% endblock %} 

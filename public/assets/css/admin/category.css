@@ -1,0 +1,113 @@
+/* Styles pour la gestion des catégories */
+.categories-table {
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: #fff;
+    border-radius: 0.35rem;
+    position: relative;
+}
+
+.table-responsive {
+    height: calc(100vh - 150px);
+    overflow-y: auto;
+    margin: 0;
+    border: none;
+}
+
+.categories-table thead {
+    position: sticky;
+    top: 2px;
+    z-index: 10;
+}
+
+.categories-table th {
+    background-color: #f8f9fc;
+    color: #4e73df;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    padding: 1rem;
+    border-bottom: 2px solid #e3e6f0;
+}
+
+.categories-table th.text-left {
+    text-align: left;
+}
+
+.categories-table td {
+    padding: 1rem;
+    vertical-align: middle;
+    border-bottom: 1px solid #e3e6f0;
+    color: #858796;
+    background-color: #fff;
+}
+
+.categories-table td.status-cell {
+    width: 100px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.categories-table tbody tr:hover {
+    background-color: #f8f9fc;
+}
+
+.categories-table .badge {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 0.25rem;
+}
+
+.status-icon {
+    font-size: 1.25rem;
+    transition: transform 0.2s ease;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.status-icon.active {
+    color: #4CAF50 !important;
+}
+
+.status-icon:hover {
+    transform: scale(1.2);
+}
+
+.categories-card {
+    border: none;
+    margin-bottom: 1.5rem;
+    height: calc(100vh - 150px);
+    display: flex;
+    flex-direction: column;
+}
+
+.categories-card .card-header {
+    background-color: #f8f9fc;
+    border-bottom: 1px solid #e3e6f0;
+    padding: 1rem 1.25rem;
+}
+
+.categories-card .card-body {
+    padding: 0.25rem;
+    flex: 1;
+    overflow: hidden;
+}
+
+.categories-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.categories-header h1 {
+    color: #5a5c69;
+    font-size: 1.75rem;
+    font-weight: 400;
+    margin: 0;
+} 

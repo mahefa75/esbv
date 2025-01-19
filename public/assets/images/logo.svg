@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="180" height="32" viewBox="0 0 180 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Logo Icon -->
+    <rect x="0" y="4" width="24" height="24" rx="6" fill="#4CAF50"/>
+    <path d="M6 16L10 20L18 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Text -->
+    <text x="32" y="20" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1a1a2e">
+        Med. Pharma
+    </text>
+    <text x="32" y="28" font-family="Arial, sans-serif" font-size="10" fill="#666">
+        Analytics Hub
+    </text>
+</svg> 
