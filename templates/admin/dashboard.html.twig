@@ -5,23 +5,40 @@
 {% block stylesheets %}
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('assets/css/admin.css') }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 {% endblock %}
 
 {% block body %}
-    <div class="admin-header">
-        <h1 class="admin-title">Panneau d'Administration</h1>
-        <a href="{{ path('admin_logout') }}" class="logout-btn">Déconnexion</a>
-    </div>
+    <div class="admin-sidebar">
+        <div class="admin-logo">
+            <img src="{{ asset('assets/images/logo.svg') }}" alt="Med. Pharma Analytics Hub">
+        </div>
+        
+        <nav class="admin-menu">
+            <a href="{{ path('admin_dashboard') }}" class="admin-menu-item">
+                <i class="material-icons">dashboard</i>
+                Dashboard
+            </a>
+        </nav>
 
-    <div class="container">
-        <div class="admin-content">
-            <div class="welcome-message">
-                Bienvenue dans l'interface d'administration.
+        <div class="user-profile">
+            <img src="{{ asset('assets/images/avatar.svg') }}" alt="User avatar">
+            <div class="user-profile-info">
+                <div class="user-name">admin</div>
+                <div class="user-role">Administrator</div>
             </div>
-            <p>
-                Cette section vous permettra de gérer le contenu de votre site web.
-                Plus de fonctionnalités seront ajoutées prochainement.
-            </p>
+            <div class="user-menu-wrapper">
+                <i class="material-icons user-menu-trigger">more_vert</i>
+                <div class="user-dropdown-menu">
+                    <a href="{{ path('admin_deconnexion') }}" class="dropdown-item">
+                        <i class="material-icons">logout</i>
+                        Se déconnecter
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
+
+    <main class="admin-main">
+    </main>
 {% endblock %} 
