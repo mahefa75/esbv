@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Administration{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('assets/css/admin.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="admin-header">
+        <h1 class="admin-title">Panneau d'Administration</h1>
+        <a href="{{ path('admin_logout') }}" class="logout-btn">Déconnexion</a>
+    </div>
+
+    <div class="container">
+        <div class="admin-content">
+            <div class="welcome-message">
+                Bienvenue dans l'interface d'administration.
+            </div>
+            <p>
+                Cette section vous permettra de gérer le contenu de votre site web.
+                Plus de fonctionnalités seront ajoutées prochainement.
+            </p>
+        </div>
+    </div>
+{% endblock %} 

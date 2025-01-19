@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Site en Construction{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('assets/css/construction.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="construction-container">
+        <h1 class="construction-title">Site en Construction</h1>
+        
+        <svg class="construction-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <!-- Fond -->
+            <circle cx="100" cy="100" r="90" fill="#f0f0f0"/>
+            
+            <!-- Engrenages -->
+            <g class="gear" fill="#3498db">
+                <circle cx="100" cy="100" r="40"/>
+                <!-- Dents pré-calculées -->
+                <rect x="95" y="40" width="10" height="25" transform="rotate(0, 100, 100)" rx="2"/>
+                <rect x="95" y="40" width="10" height="25" transform="rotate(30, 100, 100)" rx="2"/>
+                <rect x="95" y="40" width="10" height="25" transform="rotate(60, 100, 100)" rx="2"/>
+                <rect x="95" y="40" width="10" height="25" transform="rotate(90, 100, 100)" rx="2"/>
+                <rect x="95" y="40" width="10" height="25" transform="rotate(120, 100, 100)" rx="2"/>
+                <rect x="95" y="40" width="10" height="25" transform="rotate(150, 100, 100)" rx="2"/>
+                <rect x="95" y="40" width="10" height="25" transform="rotate(180, 100, 100)" rx="2"/>
+                <rect x="95" y="40" width="10" height="25" transform="rotate(210, 100, 100)" rx="2"/>
+                <rect x="95" y="40" width="10" height="25" transform="rotate(240, 100, 100)" rx="2"/>
+                <rect x="95" y="40" width="10" height="25" transform="rotate(270, 100, 100)" rx="2"/>
+                <rect x="95" y="40" width="10" height="25" transform="rotate(300, 100, 100)" rx="2"/>
+                <rect x="95" y="40" width="10" height="25" transform="rotate(330, 100, 100)" rx="2"/>
+            </g>
+            
+            <!-- Outils -->
+            <path d="M30,160 L50,140 L60,150 L40,170 Z" fill="#e74c3c"/>
+            <path d="M160,40 L170,30 L180,40 L170,50 Z" fill="#2ecc71"/>
+        </svg>
+
+        <p class="construction-message">
+            Notre site est en cours de développement.<br>
+            Nous serons bientôt de retour avec quelque chose d'extraordinaire !
+        </p>
+    </div>
+</div>
+{% endblock %} 
