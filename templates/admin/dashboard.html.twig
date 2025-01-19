@@ -19,6 +19,10 @@
                 <i class="material-icons">dashboard</i>
                 Dashboard
             </a>
+            <a href="{{ path('admin_categories_index') }}" class="admin-menu-item">
+                <i class="material-icons">category</i>
+                Catégories
+            </a>
         </nav>
 
         <div class="user-profile">
@@ -40,5 +44,6 @@
     </div>
 
     <main class="admin-main">
+        {% block content %}{% endblock %}
     </main>
 {% endblock %} 
