@@ -1,38 +1,54 @@
 {% extends 'admin/dashboard.html.twig' %}
 
-{% block title %}Gestion des catégories{% endblock %}
+{% block title %}Liste des catégories{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/admin.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/admin/category.css') }}">
+{% endblock %}
 
 {% block content %}
     {{ parent() }}
-    
     <div class="container-fluid px-4">
-        <h1 class="mt-4">Gestion des catégories</h1>
-        
-        <div class="card mb-4">
-            <div class="card-header">
-                <div class="d-flex justify-content-between align-items-center">
-                    <div>
-                        <i class="fas fa-table me-1"></i>
-                        Liste des catégories
-                    </div>
-                    <a href="{{ path('admin_categories_add') }}" class="btn btn-primary">
-                        <i class="fas fa-plus"></i> Ajouter une catégorie
-                    </a>
-                </div>
-            </div>
+        <div class="categories-header">
+            <h1>Gestion des catégories</h1>
+        </div>
+
+        <div class="categories-card card">
             <div class="card-body">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nom</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {# La liste des catégories sera ajoutée ici #}
-                    </tbody>
-                </table>
+                <div class="table-responsive">
+                    <table class="categories-table table">
+                        <thead>
+                            <tr>
+                                <th class="text-left">Catégorie</th>
+                                <th class="text-center" style="width: 100px;">Statut</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for category in categories %}
+                                <tr>
+                                    <td>
+                                        <strong>{{ category.name }}</strong><br>
+                                        <small><i>{{ category.description }}</i></small>
+                                    </td>
+                                    <td class="status-cell">
+                                        {% if category.status %}
+                                            <i class="fa-solid fa-circle-check status-icon active"></i>
+                                        {% else %}
+                                            <i class="fa-solid fa-circle-xmark text-danger status-icon"></i>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                            {% else %}
+                                <tr>
+                                    <td colspan="2" class="text-center">Aucune catégorie trouvée</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

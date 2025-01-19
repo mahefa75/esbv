@@ -2,18 +2,22 @@
 
 namespace App\Controller\Admin\Category;
 
+use App\Entity\Category;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/admin/categories', name: 'admin_categories_')]
+#[Route('/admin/categories', name: 'admin_category_')]
 class CategoryController extends AbstractController
 {
     #[Route('/', name: 'index')]
-    public function index(): Response
+    public function index(EntityManagerInterface $entityManager): Response
     {
+        $categories = $entityManager->getRepository(Category::class)->findAll();
+
         return $this->render('admin/category/index.html.twig', [
-            'controller_name' => 'CategoryController',
+            'categories' => $categories
         ]);
     }
 
