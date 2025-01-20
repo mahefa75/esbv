@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\CategoryRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: CategoryRepository::class)]
@@ -24,6 +26,14 @@ class Category
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $image = null;
+
+    #[ORM\OneToMany(mappedBy: 'category', targetEntity: Attribute::class, orphanRemoval: true)]
+    private Collection $attributes;
+
+    public function __construct()
+    {
+        $this->attributes = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -71,6 +81,36 @@ class Category
     public function setImage(?string $image): static
     {
         $this->image = $image;
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Attribute>
+     */
+    public function getAttributes(): Collection
+    {
+        return $this->attributes;
+    }
+
+    public function addAttribute(Attribute $attribute): static
+    {
+        if (!$this->attributes->contains($attribute)) {
+            $this->attributes->add($attribute);
+            $attribute->setCategory($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAttribute(Attribute $attribute): static
+    {
+        if ($this->attributes->removeElement($attribute)) {
+            // set the owning side to null (unless already changed)
+            if ($attribute->getCategory() === $this) {
+                $attribute->setCategory(null);
+            }
+        }
+
         return $this;
     }
 } 
