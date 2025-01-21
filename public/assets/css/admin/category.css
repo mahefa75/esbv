@@ -16,7 +16,7 @@
 
 .categories-table thead {
     position: sticky;
-    top: 0;
+    top: 2px;
     z-index: 10;
 }
 
